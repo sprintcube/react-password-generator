@@ -15,10 +15,10 @@ const PasswordLength = (props) => {
     );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         length: state.length
     }
 }
 
-export default connect(mapStateToProps, null)(PasswordLength);
+export default connect(mapStateToProps)(PasswordLength);
