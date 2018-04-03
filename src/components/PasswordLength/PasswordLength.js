@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const PasswordLength = (props) => {
     return (
@@ -6,7 +7,7 @@ const PasswordLength = (props) => {
             <div className="container">
                 <div className="tile is-parent has-text-centered">
                     <div className="tile is-child">
-                        <p className="title">Password Length: 10</p>
+                        <p className="title">Password Length: {props.length}</p>
                     </div>
                 </div>
             </div>
@@ -14,4 +15,10 @@ const PasswordLength = (props) => {
     );
 }
 
-export default PasswordLength;
+const mapStateToProps = state => {
+    return {
+        length: state.length
+    }
+}
+
+export default connect(mapStateToProps, null)(PasswordLength);
