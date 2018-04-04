@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Slider from 'rc-slider';
 
@@ -6,9 +6,8 @@ import * as actionTypes from '../../store/actions';
 
 import 'rc-slider/assets/index.css';
 
-class LengthSlider extends Component {
-    render() {
-        return (
+const LengthSlider = (props) => {
+    return (
             <section className="section length-slider-container">
                 <div className="container">
                     <div className="tile is-parent has-text-centered">
@@ -17,16 +16,15 @@ class LengthSlider extends Component {
                                 <Slider
                                     min={0}
                                     max={16}
-                                    defaultValue={this.props.length}
-                                    onChange={this.props.onLengthChange}
-                                    onAfterChange={this.props.onGeneratePassword} />
+                                    defaultValue={props.length}
+                                    onChange={props.onLengthChange}
+                                    onAfterChange={props.onGeneratePassword} />
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         );
-    }
 }
 
 const mapPropsToState = (state) => {
