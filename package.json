@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bloomer": "^0.6.3",
     "copy-to-clipboard": "^3.0.8",
     "rc-checkbox": "^2.1.5",
     "rc-slider": "^8.6.1",
