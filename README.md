@@ -1,4 +1,4 @@
-# Unix Timestamp Converter
+# Password Generator
 
 A tool using React to generate random password string using characters, numbers and symbols.
 
