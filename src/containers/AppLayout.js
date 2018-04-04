@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ToastContainer } from 'react-toastify';
 import PasswordGenerator from './PasswordGenerator';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -12,6 +13,7 @@ class AppLayout extends Component {
                 <PasswordGenerator />
                 <Notes/>
                 <Footer />
+                <ToastContainer />
             </div>
         );
     }

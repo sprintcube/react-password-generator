@@ -1,5 +1,7 @@
 import * as actionTypes from './actions';
 import {generatePassword} from './utility';
+import { toast } from 'react-toastify';
+import copy from 'copy-to-clipboard';
 
 const initialState = {
     length: 8,
@@ -24,6 +26,10 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 password: newPassword
             }
+        case actionTypes.COPY_PASSWORD:
+            copy(state.password);
+            toast('Copied to Clipboard!', {autoClose: 2000});
+            return state;
         case actionTypes.USE_SYMBOLS:
             return {
                 ...state,
