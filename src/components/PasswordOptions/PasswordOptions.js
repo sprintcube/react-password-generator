@@ -17,7 +17,7 @@ class PasswordOptions extends Component {
         return (
             <section className="section password-options-container">
                 <div className="columns">
-                    <div className="column is-half">
+                    <div className="column has-text-centered">
                         <label>
                             <Checkbox
                                 checked={this.props.options.symbols}
@@ -25,8 +25,6 @@ class PasswordOptions extends Component {
                             />
                             &nbsp; Symbols
                         </label>
-                    </div>
-                    <div className="column is-half">
                         <label>
                             <Checkbox
                                 checked={this.props.options.numbers}

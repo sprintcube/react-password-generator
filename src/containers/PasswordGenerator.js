@@ -15,7 +15,7 @@ class PasswordGenerator extends Component {
                         <div className="column is-half">
                             <PasswordOptions />
                         </div>
-                        <div className="column">
+                        <div className="column is-half">
                             <Password />
                         </div>
                     </div>
