@@ -3,14 +3,9 @@ import { connect } from 'react-redux';
 
 const Password = (props) => {
     return (
-        <section className="section">
-            <div className="container">
-                <div className="tile is-parent has-text-centered">
-                    <div className="tile is-child">
-                        <p className="subtitle">Generated password: {props.password}</p>
-                    </div>
-                </div>
-            </div>
+        <section className="section password-container">
+            <p className="subtitle is-5 has-text-centered">Generated password</p>
+            <h2 className="title is-4 has-text-centered">{props.password}</h2>
         </section>
     );
 }

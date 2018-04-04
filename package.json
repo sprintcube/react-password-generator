@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "bloomer": "^0.6.3",
+    "rc-checkbox": "^2.1.5",
+    "rc-slider": "^8.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",

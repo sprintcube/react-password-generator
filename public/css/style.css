@@ -1,0 +1,26 @@
+.password-length .hero-body{
+    padding: 1.5rem 1.5rem;
+}
+.length-slider-container {
+    padding: 1.5rem 1.5rem !important;
+}
+.password-options-container {
+    padding: 0.5rem 1.5rem !important;
+}
+.password-container {
+    padding: 0.3rem 1rem !important;
+}
+.password-container .subtitle {
+    padding-bottom: 1rem;
+}
+.rc-slider-track {
+    background-color: #209cee !important;
+}
+.rc-slider-rail, .rc-slider-track, .rc-slider-step {
+    height: 10px !important;
+}
+.rc-slider-handle {
+    height: 20px !important;
+    width: 20px !important;
+    border: solid 3px #209cee !important;
+}

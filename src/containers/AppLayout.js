@@ -7,7 +7,7 @@ import Notes from '../components/Notes/Notes';
 class AppLayout extends Component {
     render() {
         return (
-            <div className="container">
+            <div>
                 <Header />
                 <PasswordGenerator />
                 <Notes/>

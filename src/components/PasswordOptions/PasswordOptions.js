@@ -1,31 +1,63 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Checkbox from 'rc-checkbox';
 
-const PasswordOptions = (props) => {
-    return (
-        <section className="section">
-            <div className="container">
-                <div className="tile is-parent has-text-centered">
-                    <div className="tile is-child">
-                        <div className="field">
-                            <div className="control">
-                                <label className="radio">
-                                    <input type="radio" name="question" /> Yes
-                            </label>
-                                <label className="radio">
-                                    <input type="radio" name="question" /> No
-                            </label>
-                            </div>
-                            <p className="control">
-                                <a className="button is-info">
-                                    Search
-                            </a>
-                            </p>
-                        </div>
+import * as actionTypes from '../../store/actions';
+
+import 'rc-checkbox/assets/index.css';
+
+class PasswordOptions extends Component {
+
+    componentDidMount = () => {
+        const { onGeneratePassword } = this.props;
+        onGeneratePassword();
+    }
+
+    render() {
+        return (
+            <section className="section password-options-container">
+                <div className="columns">
+                    <div className="column is-half">
+                        <label>
+                            <Checkbox
+                                checked={this.props.options.symbols}
+                                onChange={this.props.onSymbolsChange}
+                            />
+                            &nbsp; Symbols
+                        </label>
+                    </div>
+                    <div className="column is-half">
+                        <label>
+                            <Checkbox
+                                checked={this.props.options.numbers}
+                                onChange={this.props.onNumbersChange}
+                            />
+                            &nbsp; Numbers
+                        </label>
                     </div>
                 </div>
-            </div>
-        </section>
-    );
+                <div className="columns">
+                    <div class="column is-6 is-offset-3">
+                        <a className="button is-info is-fullwidth" onClick={this.props.onGeneratePassword}>Generate</a>
+                    </div>
+                </div>
+            </section>
+        );
+    }
 }
 
-export default PasswordOptions;
+const mapStateToProps = (state) => {
+    return {
+        options: state.options
+    }
+}
+
+const mapPropsToDispatch = (dispatch) => {
+    return {
+        onSymbolsChange: () => dispatch({ type: actionTypes.USE_SYMBOLS }),
+        onNumbersChange: () => dispatch({ type: actionTypes.USE_NUMBERS }),
+        onGeneratePassword: () => dispatch({ type: actionTypes.GENERATE_PASSWORD })
+    }
+}
+
+export default connect(mapStateToProps, mapPropsToDispatch)(PasswordOptions);

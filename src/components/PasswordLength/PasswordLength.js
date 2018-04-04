@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 
 const PasswordLength = (props) => {
     return (
-        <section className="section">
-            <div className="container">
-                <div className="tile is-parent has-text-centered">
-                    <div className="tile is-child">
-                        <p className="title">Password Length: {props.length}</p>
-                    </div>
+        <section className="hero password-length">
+            <div className="hero-body">
+                <div className="container has-text-centered">
+                    <h2 className="title is-4">Password Length: {props.length}</h2>
                 </div>
             </div>
         </section>
